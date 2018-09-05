@@ -8,47 +8,7 @@
 	<meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0;">
-
 <div id="map" style="width: 100%; height: 100%; background: #000000; margin: 0;"></div>
-
-<script type="text/javascript">
-
-var mapSW =[0, 8192],
-	mapNE =[8192, 0];
-
-//initialize map object
-var map = L.map('map').setView([0,0], 4);
-
-//Reference tiles
-L.tileLayer('map/{z}/{x}/{y}.png', {
-	minZoom: 3,
-	maxZoom: 5,
-	continuousWorld: false,
-	noWrap: true,
-	crs: L.CRS.Simple,
-}).addTo(map)
-
-map.setMaxBounds(new L.LatLngBounds(
-	map.unproject(mapSW, map.getMaxZoom()),
-	map.unproject(mapNE, map.getMaxZoom())
-	));
-
-
-//Markers (flags)
-var referenceflag = L.marker([0, 0], {
-	draggable: true,
-}).addTo(map);
-referenceflag.bindPopup('<b>REFERENCE</b>').openPopup();
-//текущая гео
-referenceflag.on('dragend', function(e) {
-	referenceflag.getPopup().setContent(referenceflag.getLatLng().toString() + "<br />" + 'Pixels ' + map.project(referenceflag.getLatLng(), map.getMaxZoom().toString())).openOn(map);
-});
-
-//Flags
-var flag_tew = L.marker(map.unproject([1500, 1500]), map.getMaxZoom()).addTo(map);
-flag_tew.bindPopup('tew')
-
-</script>
-
+<script type="text/javascript" src="./scripts/leaflet/th_le.js"></script>
 </body>
 </html>
