@@ -27,6 +27,7 @@ L.tileLayer('map/{z}/{x}/{y}.png', {
 	continuousWorld: false,
 	noWrap: true,
 	crs: L.CRS.Simple,
+	edgeBufferTiles: 2,
 }).addTo(map)
 
 map.setMaxBounds(new L.LatLngBounds(
