@@ -62,6 +62,9 @@ var marker5 = L.marker([38, -100])
 var marker6 = L.marker(map.unproject([700, 1500]), map.getMaxZoom())
 .bindPopup('tew1')
 
+var mark = L.marker([700, 1500])
+.bindPopup('tew1')
+
 //Layer Groups
 
 var lg_1 = L.layerGroup([marker1, marker2, marker3]);
@@ -76,3 +79,49 @@ var overlays = {
 L.control.layers(null, overlays, {
 	collapsed: false
 }).addTo(map);
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+//path routing
+
+var RotatingIcon = L.DivIcon.extend({
+    createIcon: function() {
+        // outerDiv.style.transform is updated by Leaflet
+        var outerDiv = document.createElement('div');
+        this.div = document.createElement('div');
+        outerDiv.appendChild(this.div);
+        return outerDiv;
+    },
+    rotate(deg) {
+        this.div.style.transform = 'rotate(' + deg + 'deg)';
+    },
+});
+
+var myIcon = L.icon({
+  iconUrl: '/images/ship2.png'
+});
+
+// var myIcon = new RotatingIcon();
+
+var coordinateArray = [ [25,-10], [52,-22], [56,-5], [25, -10] ];
+var myPolyline = L.polyline(coordinateArray);
+myPolyline.addTo(map);
+var myMovingMarker = L.Marker.movingMarker(coordinateArray, [6000, 3000, 4000], {
+	destination: coordinateArray,
+    autostart: true,
+    loop: true,
+    icon: myIcon
+}).addTo(map);
+map.addLayer(myMovingMarker);
+
+// myMovingMarker.on('start', function() {
+//     icon.rotate(startingRotation);
+// });
+// myMovingMarker.on('destination', function(destination) {
+//     icon.rotate(destination.rotation);
+// });
+
+myMovingMarker.start();
