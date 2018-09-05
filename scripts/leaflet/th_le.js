@@ -47,7 +47,7 @@ referenceflag.on('dragend', function(e) {
 var marker1 = L.marker(map.unproject([1500, 1500]), map.getMaxZoom())
 .bindPopup('tew')
 
-var marker2 = L.marker([41, -37.25], {icon: Myicon})
+var marker2 = L.marker([42.2, -11], {icon: Myicon})
 .bindPopup('<b>Text</b><br>Lorem ipsum dolor sit amet')
 
 var marker3 = L.marker(map.unproject([1500, 1600]), map.getMaxZoom())
