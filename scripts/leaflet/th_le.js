@@ -67,7 +67,7 @@ var mark = L.marker([700, 1500])
 
 //Layer Groups
 
-var lg_1 = L.layerGroup([marker1, marker2, marker3]);
+var lg_1 = L.layerGroup([marker1, marker2, marker3]).addTo(map);
 var lg_2 = L.layerGroup([marker4, marker5, marker6]);
 
 var overlays = {
@@ -86,25 +86,27 @@ L.control.layers(null, overlays, {
 ////////////////////////////////////////////////////////
 
 //path routing
-
-var RotatingIcon = L.DivIcon.extend({
-    createIcon: function() {
-        // outerDiv.style.transform is updated by Leaflet
-        var outerDiv = document.createElement('div');
-        this.div = document.createElement('div');
-        outerDiv.appendChild(this.div);
-        return outerDiv;
-    },
-    rotate(deg) {
-        this.div.style.transform = 'rotate(' + deg + 'deg)';
-    },
-});
-
 var myIcon = L.icon({
-  iconUrl: '/images/ship2.png'
+  iconUrl: '/images/ship2.png',
+  iconSize: [77, 58],
+  iconAnchor: [36, 50],
+  // popupAnchor: [0, -80],
+
 });
 
-// var myIcon = new RotatingIcon();
+var mv_marker = L.marker([32,-25], {icon: myIcon}).addTo(map);
+
+
+mv_marker.slideTo( [51, -3], {
+    duration: 7000,
+    keepAtCenter: false,
+});
+
+
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
 
 var coordinateArray = [ [25,-10], [52,-22], [56,-5], [25, -10] ];
 var myPolyline = L.polyline(coordinateArray);
@@ -113,15 +115,8 @@ var myMovingMarker = L.Marker.movingMarker(coordinateArray, [6000, 3000, 4000], 
 	destination: coordinateArray,
     autostart: true,
     loop: true,
-    icon: myIcon
+    icon: myIcon,
 }).addTo(map);
 map.addLayer(myMovingMarker);
-
-// myMovingMarker.on('start', function() {
-//     icon.rotate(startingRotation);
-// });
-// myMovingMarker.on('destination', function(destination) {
-//     icon.rotate(destination.rotation);
-// });
 
 myMovingMarker.start();
