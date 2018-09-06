@@ -109,7 +109,9 @@ mv_marker.slideTo( [51, -3], {
 
 
 var coordinateArray = [ [25,-10], [52,-22], [56,-5], [25, -10] ];
-var myPolyline = L.polyline(coordinateArray);
+var myPolyline = L.polyline(coordinateArray, {
+	className: 'line_test',
+});
 myPolyline.addTo(map);
 var myMovingMarker = L.Marker.movingMarker(coordinateArray, [6000, 3000, 4000], {
 	destination: coordinateArray,

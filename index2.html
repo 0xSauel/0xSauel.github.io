@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="./scripts/leaflet/leaflet.bezier.js"></script>
 	<script src='https://unpkg.com/leaflet.marker.slideto@0.2.0/Leaflet.Marker.SlideTo.js'></script>
 	<script type="text/javascript" src="/scripts/snap.svg.js"></script>
+	<link rel="stylesheet" type="text/css" href="./scripts/svg.css">
 	
 </head>
 <body style="height: 100%; margin: 0;">
@@ -118,7 +119,14 @@ var myIcon = L.icon({
   // popupAnchor: [0, -80],
 
 });
-//var line = L.line([L.latLng(44.54136296522163,100.520507812500004), L.latLng(50.214338608258224,70.564453125000004)]).addTo(map);
+
+
+//var line_css = L.line([L.latLng(44.54136296522163,100.520507812500004), L.latLng(50.214338608258224,70.564453125000004)]).addTo(map);
+
+
+
+
+
 var marker = L.Marker.movingMarker([[44.54136296522163,100.520507812500004],[50.214338608258224,70.564453125000004]],
                     [2000], {
                     	loop: true,
@@ -128,6 +136,37 @@ marker.addLatLng([-10,44], [2000])
 marker.addLatLng([-10,90], [2000])
 marker.addLatLng([44.54136296522163,100.520507812500004], [2000])
 marker.start();
+
+
+
+
+
+
+
+
+
+
+
+var coordinateArray = [ [25,-10], [52,-22], [56,-5], [25, -10] ];
+var myPolyline = L.polyline(coordinateArray, {
+	className: 'line_test'
+});
+myPolyline.addTo(map);
+var myMovingMarker = L.Marker.movingMarker(coordinateArray, [6000, 3000, 4000], {
+	destination: coordinateArray,
+    autostart: true,
+    loop: true,
+    icon: myIcon,
+}).addTo(map);
+map.addLayer(myMovingMarker);
+
+myMovingMarker.start();
+
+
+
+
+
+
 </script>
 
 </body>
