@@ -233,7 +233,7 @@ var west_legion = L.marker([8.450639, -9.580078], {icon: Tevinter})
 .bindPopup('<center><b>Западный легион</b></center><hr>Общая численность ~50 тысяч душ<br>Управляется советом трибунов и префекта в отсутсвие Маркуса Люция')
 
 var watchers_fleet = L.marker([54.72462, 31.552734], {icon: Tevinter})
-.bindPopup('<center><b>Дозорный флот</b></center><hr>temp')
+.bindPopup('<center><b>Дозорный флот</b></center><hr>')
 
 var south_legion_fleet = L.marker([-25.324167, 86.484375], {icon: Tevinter})
 .bindPopup('<center><b>Флот южного легиона</b></center><hr>Полупустые корабли для переправки легиона из Камберленда в Джейдер<br>Ожидают воронов с приказами')
@@ -242,7 +242,7 @@ var north_lefion = L.marker([39.97712, -29.443359], {icon: Tevinter})
 .bindPopup('<center><b>Северный легион</b></center><hr>Отозван с Сегерона в 9:41 ВД')
 
 var east_legion = L.marker([42.098222, 19.863281], {icon: Tevinter})
-.bindPopup('<center><b>Восточный легион</b></center><hr>temp')
+.bindPopup('<center><b>Восточный легион</b></center><hr>')
 
 var south_legion = L.marker([-4.127285, -6.152344], {icon: Tevinter})
 .bindPopup('<center><b>Южный легион</b></center><hr>Продвигается в сторону Скайхолда под знаменами Инквизиции')
@@ -251,7 +251,7 @@ var donarks_base = L.marker([66.548263, -73.916016], {icon: Tevinter})
 .bindPopup('<center><b>Ставка в Донарксе</b></center><hr>Хорошо охраняемая местность, где разводят редких боевых слонов для армии Тевинтера. Тут же проходят отбор и обучение воины из местных племен, пожелавшие вступить в легионы.</center>')
 
 var central_legion = L.marker([24.527135, 5.449219], {icon: Tevinter})
-.bindPopup('<center><b>Легион центрального округа</b></center><hr>temp')
+.bindPopup('<center><b>Легион центрального округа</b></center><hr>')
 
 //Layer Groups
 
