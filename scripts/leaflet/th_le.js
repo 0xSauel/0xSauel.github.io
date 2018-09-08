@@ -292,8 +292,8 @@ L.control.layers(null, overlays, {
 
 var wagon_marker = L.icon({
   iconUrl: '/images/wagon.png',
-  iconSize: [57, 38],
-  iconAnchor: [24, 30],
+  iconSize: [43, 24],
+  iconAnchor: [20, 19],
   // popupAnchor: [0, -80],
 });
 
@@ -318,7 +318,7 @@ var Antiva_Dairsmuid_line = L.polyline([ [23.84565, 75.058594], [37.649034, 95.5
 });
 Antiva_Dairsmuid_line.addTo(map);
 
-var Antiva_Dairsmuid_marker = L.Marker.movingMarker(Antiva_Dairsmuid, 20000, {
+var Antiva_Dairsmuid_marker = L.Marker.movingMarker(Antiva_Dairsmuid, 40000, {
 	destination: Antiva_Dairsmuid,
     autostart: true,
     loop: true,
@@ -336,7 +336,7 @@ var Cumberland_Jader_line = L.polyline([ [-32.916485, -7.646484], [-44.496505, 6
 });
 Cumberland_Jader_line.addTo(map);
 
-var Cumberland_Jader_marker = L.Marker.movingMarker(Cumberland_Jader, 20000, {
+var Cumberland_Jader_marker = L.Marker.movingMarker(Cumberland_Jader, 40000, {
 	destination: Cumberland_Jader,
     autostart: true,
     loop: true,
@@ -354,7 +354,7 @@ var Qunandar_Kont_arr_line = L.polyline([ [68.704486, 76.157227], [67.424364, 73
 });
 Qunandar_Kont_arr_line.addTo(map);
 
-var Qunandar_Kont_arr_marker = L.Marker.movingMarker(Qunandar_Kont_arr, 20000, {
+var Qunandar_Kont_arr_marker = L.Marker.movingMarker(Qunandar_Kont_arr, 40000, {
 	destination: Qunandar_Kont_arr,
     autostart: true,
     loop: true,
@@ -372,7 +372,7 @@ var Qunandar_Seheron_line = L.polyline([[68.704486, 76.157227], [62.69431, 38.45
 });
 Qunandar_Seheron_line.addTo(map);
 
-var Qunandar_Seheron_marker = L.Marker.movingMarker(Qunandar_Seheron, 20000, {
+var Qunandar_Seheron_marker = L.Marker.movingMarker(Qunandar_Seheron, 40000, {
 	destination: Qunandar_Seheron,
     autostart: true,
     loop: true,
@@ -391,7 +391,7 @@ var Ostwick_Highever_Kirkwall_line = L.polyline([[-24.726875, 61.347656], [-25.7
 });
 Ostwick_Highever_Kirkwall_line.addTo(map);
 
-var Ostwick_Highever_Kirkwall_marker = L.Marker.movingMarker(Ostwick_Highever_Kirkwall, 20000, {
+var Ostwick_Highever_Kirkwall_marker = L.Marker.movingMarker(Ostwick_Highever_Kirkwall, 40000, {
 	destination: Ostwick_Highever_Kirkwall,
     autostart: true,
     loop: true,
@@ -409,7 +409,7 @@ var Denerim_Gwaren_line = L.polyline([[-48.400032, 67.368164], [-44.087585, 74.8
 });
 Denerim_Gwaren_line.addTo(map);
 
-var Denerim_Gwaren_marker = L.Marker.movingMarker(Denerim_Gwaren, 20000, {
+var Denerim_Gwaren_marker = L.Marker.movingMarker(Denerim_Gwaren, 40000, {
 	destination: Denerim_Gwaren,
     autostart: true,
     loop: true,
@@ -427,7 +427,7 @@ var Antiva_Denerim_line = L.polyline([[23.84565, 75.058594], [24.046464, 80.8154
 });
 Antiva_Denerim_line.addTo(map);
 
-var Antiva_Denerim_marker = L.Marker.movingMarker(Antiva_Denerim, 20000, {
+var Antiva_Denerim_marker = L.Marker.movingMarker(Antiva_Denerim, 40000, {
 	destination: Antiva_Denerim,
     autostart: true,
     loop: true,
@@ -445,7 +445,7 @@ var Minrathous_Qarinus_line = L.polyline([[52.802761, -22.324219], [51.944265, -
 });
 Minrathous_Qarinus_line.addTo(map);
 
-var Minrathous_Qarinus_marker = L.Marker.movingMarker(Minrathous_Qarinus, 20000, {
+var Minrathous_Qarinus_marker = L.Marker.movingMarker(Minrathous_Qarinus, 40000, {
 	destination: Minrathous_Qarinus,
     autostart: true,
     loop: true,
@@ -462,7 +462,7 @@ var QarinusW_Antiva_line = L.polyline([[47.872144, 20.390625], [53.278353, 27.77
 });
 QarinusW_Antiva_line.addTo(map);
 
-var QarinusW_Antiva_marker = L.Marker.movingMarker(QarinusW_Antiva, 20000, {
+var QarinusW_Antiva_marker = L.Marker.movingMarker(QarinusW_Antiva, 40000, {
 	destination: QarinusW_Antiva,
     autostart: true,
     loop: true,
@@ -483,7 +483,7 @@ var Minrathous_Vol = [[ 52.375599, -22.763672], [52.160455, -23.686523], [51.289
 // });
 // Minrathous_Vol_line.addTo(map);
 
-var Minrathous_Vol_marker = L.Marker.movingMarker(Minrathous_Vol, 20000, {
+var Minrathous_Vol_marker = L.Marker.movingMarker(Minrathous_Vol, 40000, {
 	destination: Minrathous_Vol,
     autostart: true,
     loop: true,
@@ -501,7 +501,7 @@ var Qarinus_Antiva_line = L.polyline([[46.980252, 20.170898], [41.771312, 32.695
 });
 Qarinus_Antiva_line.addTo(map);
 
-var Qarinus_Antiva_marker = L.Marker.movingMarker(Qarinus_Antiva, 20000, {
+var Qarinus_Antiva_marker = L.Marker.movingMarker(Qarinus_Antiva, 40000, {
 	destination: Qarinus_Antiva,
     autostart: true,
     loop: true,
@@ -519,7 +519,7 @@ var Orzammar_Denerim = [ [-48.951366, 8.745117], [-49.267805, 8.789063], [-49.63
 // });
 // Orzammar_Denerim_line.addTo(map);
 
-var Orzammar_Denerim_marker = L.Marker.movingMarker(Orzammar_Denerim, 20000, {
+var Orzammar_Denerim_marker = L.Marker.movingMarker(Orzammar_Denerim, 40000, {
 	destination: Orzammar_Denerim,
     autostart: true,
     loop: true,
@@ -537,7 +537,7 @@ var Val_Royeaux_Adamant_line = L.polyline([[-51.590723, -55.458984], [-51.508742
 });
 Val_Royeaux_Adamant_line.addTo(map);
 
-var Val_Royeaux_Adamant_marker = L.Marker.movingMarker(Val_Royeaux_Adamant, 20000, {
+var Val_Royeaux_Adamant_marker = L.Marker.movingMarker(Val_Royeaux_Adamant, 40000, {
 	destination: Val_Royeaux_Adamant,
     autostart: true,
     loop: true,
@@ -554,7 +554,7 @@ var Nevarra_Cumberland_line = L.polyline([[-15.199386, -14.282227], [-17.769612,
 });
 Nevarra_Cumberland_line.addTo(map);
 
-var Nevarra_Cumberland_marker = L.Marker.movingMarker(Nevarra_Cumberland, 20000, {
+var Nevarra_Cumberland_marker = L.Marker.movingMarker(Nevarra_Cumberland, 40000, {
 	destination: Nevarra_Cumberland,
     autostart: true,
     loop: true,
@@ -571,7 +571,7 @@ var Qarinus_Minrathous_line = L.polyline([[47.219568, 20.170898], [42.779275, 7.
 });
 Qarinus_Minrathous_line.addTo(map);
 
-var Qarinus_Minrathous_marker = L.Marker.movingMarker(Qarinus_Minrathous, 20000, {
+var Qarinus_Minrathous_marker = L.Marker.movingMarker(Qarinus_Minrathous, 40000, {
 	destination: Qarinus_Minrathous,
     autostart: true,
     loop: true,
