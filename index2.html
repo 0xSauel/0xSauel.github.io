@@ -163,6 +163,20 @@ map.addLayer(myMovingMarker);
 myMovingMarker.start();
 
 
+//////////////////Polygon
+
+
+var poly_test = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
+var polygon = L.polygon(poly_test, {
+	className : 'poly_test'
+}).addTo(map);
+// zoom the map to the polygon
+map.fitBounds(polygon.getBounds());
+
+// polygon.on('click', function(e){
+//     polygon.setStyle({
+//     	className: 'poly_2'});
+// });
 
 
 
