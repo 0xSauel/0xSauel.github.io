@@ -17,16 +17,120 @@
 
 
 .farelden_reg {
-	fill: rgba(15, 15, 15, 0.8);
-	color: rgba(44, 160, 137, 0.7);
-	stroke: rgba(15, 15, 15, 0.3);
+	fill: rgba(15, 15, 15, 0.0);
+	color: rgba(44, 160, 137, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
 	stroke-width: 0;
 }
 
 .farelden_reg:hover {
-	fill: rgba(200, 15, 15, 0.5);
-	color: rgba(200, 160, 137, 0.7);
-	stroke: rgba(200, 15, 15, 0.3);
+	fill: rgba(56, 7, 139, 0.7);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.orlais_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.orlais_reg:hover {
+	fill: rgba(251, 253, 0, 0.7);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.nevarra_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.nevarra_reg:hover {
+	fill: rgba(0, 0, 0, 0.9);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.anderfels_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.anderfels_reg:hover {
+	fill: rgba(255, 174, 0, 0.9);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.tevinter_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.tevinter_reg:hover {
+	fill: rgba(73, 194, 61, 1);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.free_marches_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.free_marches_reg:hover {
+	fill: rgba(211, 16, 16, 0.9);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.antiva_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.antiva_reg:hover {
+
+	fill: rgba(255, 0, 252, 0.9);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.rivain_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.rivain_reg:hover {
+	fill: rgba(79, 2, 78, 1);
+	stroke: rgba(185, 185, 185, 0.8);
+	stroke-width: 2;
+	stroke-dasharray: 6,5;
+}
+
+.seheron_and_par_vollen_reg {
+	fill: rgba(15, 15, 15, 0.0);
+	stroke: rgba(15, 15, 15, 0.0);
+	stroke-width: 0;
+}
+
+.seheron_and_par_vollen_reg:hover {
+	fill: rgba(17, 27, 166, 0.9);
+	stroke: rgba(185, 185, 185, 0.8);
 	stroke-width: 2;
 	stroke-dasharray: 6,5;
 }
