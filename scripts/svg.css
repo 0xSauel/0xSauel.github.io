@@ -16,14 +16,14 @@
 }
 
 
-.poly_test {
-	fill: rgba(15, 15, 15, 0.0);
+.farelden_reg {
+	fill: rgba(15, 15, 15, 0.8);
 	color: rgba(44, 160, 137, 0.7);
 	stroke: rgba(15, 15, 15, 0.3);
 	stroke-width: 0;
 }
 
-.poly_test:hover {
+.farelden_reg:hover {
 	fill: rgba(200, 15, 15, 0.5);
 	color: rgba(200, 160, 137, 0.7);
 	stroke: rgba(200, 15, 15, 0.3);
@@ -31,8 +31,3 @@
 	stroke-dasharray: 6,5;
 }
 
-.poly_2 {
-	fill: rgba(200, 15, 15, 0.3);
-	color: rgba(200, 160, 137, 0.7);
-	stroke: rgba(200, 15, 15, 0.3);
-}
