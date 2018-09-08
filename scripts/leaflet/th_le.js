@@ -366,3 +366,18 @@ Qunandar_Kont_arr_marker.start();
 
 //////
 
+var Qunandar_Seheron = [ [68.704486, 76.157227], [62.69431, 38.452148], [62.308794, 35.332031], [60.413852, 30.102539], [60.152442, 20.083008], [60.413852, 30.102539], [62.308794, 35.332031], [62.69431, 38.452148],  [68.704486, 76.157227] ];
+var Qunandar_Seheron_line = L.polyline([[68.704486, 76.157227], [62.69431, 38.452148], [62.308794, 35.332031], [60.413852, 30.102539], [60.152442, 20.083008]], {
+	className: 'water-route',
+});
+Qunandar_Seheron_line.addTo(map);
+
+var Qunandar_Seheron_marker = L.Marker.movingMarker(Qunandar_Seheron, [2000, 6000, 2000, 2000, 6000, 2000, 2000, 2000], {
+	destination: Qunandar_Seheron,
+    autostart: true,
+    loop: true,
+    icon: ship_marker,
+}).addTo(map);
+map.addLayer(Qunandar_Seheron_marker);
+
+Qunandar_Seheron_marker.start();
