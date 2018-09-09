@@ -282,14 +282,6 @@ L.control.layers(null, overlays, {
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
 
-//Иконки маркеров для путей
-// var test_mark = L.icon({
-//   iconUrl: '/images/ship2.png',
-//   iconSize: [77, 58],
-//   iconAnchor: [36, 50],
-//   // popupAnchor: [0, -80],
-// });
-
 var wagon_marker = L.icon({
   iconUrl: '/images/wagon.png',
   iconSize: [43, 24],
@@ -303,8 +295,6 @@ var ship_marker = L.icon({
   iconAnchor: [20, 35],
   // popupAnchor: [0, -80],
 });
-
-
 
 
 ////////////////////////////////////////////////////////
