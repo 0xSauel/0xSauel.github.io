@@ -253,29 +253,7 @@ var donarks_base = L.marker([66.548263, -73.916016], {icon: Tevinter})
 var central_legion = L.marker([24.527135, 5.449219], {icon: Tevinter})
 .bindPopup('<center><b>Легион центрального округа</b></center><hr>')
 
-//Layer Groups
 
-var lg_1 = L.layerGroup([skyhold, gessarian_camp, du_cordo, revasan, bronak]);
-var lg_2 = L.layerGroup([suledin, adamant, amarantain, korifei_camp, dumat, terinfall, kaer_oswin, griphon_wing, soldier_height]);
-var lg_3 = L.layerGroup([mital, lost_dirtamena, grey_guardians, ostagar, eonar, velanis, velabanchel, akhaaz, elim]);
-var lg_4 = L.layerGroup([amarantain_battle, west_holm, korifei_tewinter]);
-var lg_5 = L.layerGroup([tellari_swamp, kirkwall, inner_place, stormshore, du_lion, holyplains, emerald_graves, west_rich, hissing_wastes, crosswood, frostback_basin, hundred_pillars, perendeil, donark, high_reaches, white_peak]);
-var lg_6 = L.layerGroup([west_legion, watchers_fleet, south_legion_fleet, north_lefion, east_legion, south_legion, donarks_base, central_legion]);
-
-
-var overlays = {
-	"Инквизиция и союзники" : lg_1,
-	"Силы Старшего" : lg_2,
-	"Силы Тевинтера" : lg_6,
-	"Нейтральные крепости" : lg_3,
-	"Места сражений" : lg_4,
-	"Гнезда драконов" : lg_5,
-}
-
-//Layer control
-L.control.layers(null, overlays, {
-	collapsed: false,
-}).addTo(map);
 
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
@@ -631,7 +609,32 @@ var seheron_and_par_vollen_poly = L.polygon(seheron_and_par_vollen, {
 
 
 
+//Layer Groups
 
+var lg_1 = L.layerGroup([skyhold, gessarian_camp, du_cordo, revasan, bronak]);
+var lg_2 = L.layerGroup([suledin, adamant, amarantain, korifei_camp, dumat, terinfall, kaer_oswin, griphon_wing, soldier_height]);
+var lg_3 = L.layerGroup([mital, lost_dirtamena, grey_guardians, ostagar, eonar, velanis, velabanchel, akhaaz, elim]);
+var lg_4 = L.layerGroup([amarantain_battle, west_holm, korifei_tewinter]);
+var lg_5 = L.layerGroup([tellari_swamp, kirkwall, inner_place, stormshore, du_lion, holyplains, emerald_graves, west_rich, hissing_wastes, crosswood, frostback_basin, hundred_pillars, perendeil, donark, high_reaches, white_peak]);
+var lg_6 = L.layerGroup([west_legion, watchers_fleet, south_legion_fleet, north_lefion, east_legion, south_legion, donarks_base, central_legion]);
+var lg_7 = L.layerGroup([farelden_poly, orlais_poly, nevarra_poly, anderfels_poly, tevinter_poly, free_marches_poly, antiva_poly, rivain_poly, donarks_poly, seheron_and_par_vollen_poly]).addTo(map);
+
+
+
+var overlays = {
+	"Инквизиция и союзники" : lg_1,
+	"Силы Старшего" : lg_2,
+	"Силы Тевинтера" : lg_6,
+	"Нейтральные крепости" : lg_3,
+	"Места сражений" : lg_4,
+	"Гнезда драконов" : lg_5,
+	"Границы стран" : lg_7,
+}
+
+//Layer control
+L.control.layers(null, overlays, {
+	collapsed: false,
+}).addTo(map);
 
 
 
