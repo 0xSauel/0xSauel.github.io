@@ -562,7 +562,7 @@ var farelden_poly = L.polygon(farelden, {
 var orlais = [ [-45.58329, 9.316406], [-48.283193, 4.042969], [-51.289406, -5.976563], [-60.802064, -4.833984], [-66.337505, -3.867188], [-70.318738, 0.087891], [-70.289117, -5.185547], [-66.998844, -9.755859], [-65.838776, -24.433594], [-66.652977, -43.769531], [-70.259452, -51.679688], [-70.318738, -81.826172], [-62.593341, -98.173828], [-52.536273, -107.226563], [-46.55886, -124.013672], [-37.579413, -134.560547], [-16.720385, -130.429688], [-7.885147, -110.742188], [0.527336, -72.421875], [-3.864255, -58.535156], [-8.581021, -56.953125], [-26.509905, -36.914063], [-36.244273, -12.744141], [-45.58329, 9.316406] ];
 var orlais_poly = L.polygon(orlais, {
 	className : 'orlais_reg'
-}).bindPopup('<center><h2><b>Орлей</b></h2><hr><img src="images/Orlei_heraldry.png" width="100" height="100">"<br><b>Столица: </b> Вал Руайо<br><b>Форма правления: </b> абсолютная монархия<br><b>Правитель:</b> императрица Флорианна де Шалон<br><b>Население: </b> ~ 4 500 000 душ<br><b>Государственный язык: </b> орлейский <br><b>Государственная религия: </b> андрастианство (до переворота)<br><b>Политико-экономическое состояние: </b> захвачен Корифеем. Ведутся попытки организовать сопротивление.</center>').addTo(map);
+}).bindPopup('<center><h2><b>Орлей</b></h2><hr><img src="images/Orlei_heraldry.png" width="100" height="100"><br><b>Столица: </b> Вал Руайо<br><b>Форма правления: </b> абсолютная монархия<br><b>Правитель:</b> императрица Флорианна де Шалон<br><b>Население: </b> ~ 4 500 000 душ<br><b>Государственный язык: </b> орлейский <br><b>Государственная религия: </b> андрастианство (до переворота)<br><b>Политико-экономическое состояние: </b> захвачен Корифеем. Ведутся попытки организовать сопротивление.</center>').addTo(map);
 
 var nevarra = [ [0.527336, -72.421875], [-3.864255, -58.535156], [-8.581021, -56.953125], [-26.509905, -36.914063], [-36.244273, -12.744141], [-33.72434, -1.450195], [0.878872, 7.382813], [2.986927, -21.621094], [7.885147, -36.386719], [0.527336, -72.421875] ];
 var nevarra_poly = L.polygon(nevarra, {
@@ -606,7 +606,18 @@ var seheron_and_par_vollen_poly = L.polygon(seheron_and_par_vollen, {
 }).bindPopup('<center><h2><b>Сегерон и Пар Воллен</b></h2><hr><img src="images/Qunari_House_of_Tides_heraldry.png" width="100" height="100"><br><b>Столица: </b> Кунандар<br><b>Форма правления: </b> триумвират<br><b>Правители: </b> Аришок, Аригена, Арикун<br><b>Население: </b> ~ 3 250 000 душ<br><b>Государственный язык: </b> кунлат<br><b>Государственная религия: </b> Кун<br><b>Политико-экономическая ситуация: </b> сохраняют нейтралитет и наблюдают за ситуацией на континенте, готовясь нанести удар по победителю для последующего завоевания.</center>').addTo(map);
 
 
+//Graticule
 
+var grat = L.latlngGraticule({
+        showLabel: true,
+        fontColor: '#fff',
+        zoomInterval: [
+            {start: 2, end: 3, interval: 30},
+            {start: 4, end: 4, interval: 10},
+            {start: 5, end: 7, interval: 5},
+            {start: 8, end: 10, interval: 1}
+        ]
+    });
 
 
 //Layer Groups
@@ -618,7 +629,7 @@ var lg_4 = L.layerGroup([amarantain_battle, west_holm, korifei_tewinter]);
 var lg_5 = L.layerGroup([tellari_swamp, kirkwall, inner_place, stormshore, du_lion, holyplains, emerald_graves, west_rich, hissing_wastes, crosswood, frostback_basin, hundred_pillars, perendeil, donark, high_reaches, white_peak]);
 var lg_6 = L.layerGroup([west_legion, watchers_fleet, south_legion_fleet, north_lefion, east_legion, south_legion, donarks_base, central_legion]);
 var lg_7 = L.layerGroup([farelden_poly, orlais_poly, nevarra_poly, anderfels_poly, tevinter_poly, free_marches_poly, antiva_poly, rivain_poly, donarks_poly, seheron_and_par_vollen_poly]).addTo(map);
-
+var lg_8 = L.layerGroup([grat]);
 
 
 var overlays = {
@@ -629,6 +640,7 @@ var overlays = {
 	"Места сражений" : lg_4,
 	"Гнезда драконов" : lg_5,
 	"Границы стран" : lg_7,
+	"Координатная сетка" : lg_8,
 }
 
 //Layer control
