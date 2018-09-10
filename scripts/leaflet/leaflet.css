@@ -366,7 +366,7 @@
 .leaflet-control-layers-expanded {
 	padding: 6px 10px 6px 6px;
 	color: #333;
-	background: linear-gradient(to bottom, #b5a965 0%,#e8e1a7 49%,#b5a965 100%); /*#fff; фон*/
+	background: url(/scripts/leaflet/images/bg.png); /*linear-gradient(to bottom, #b5a965 0%,#e8e1a7 49%,#b5a965 100%); /*#fff; фон*/
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
@@ -374,9 +374,9 @@
 	padding-right: 5px;
 	}
 .leaflet-control-layers-selector {
-	margin-top: 2px;
+	margin-top: 1px;
 	position: relative;
-	top: 1px;
+	top: 2px;
 	}
 .leaflet-control-layers label {
 	display: block;
@@ -633,3 +633,5 @@
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+
