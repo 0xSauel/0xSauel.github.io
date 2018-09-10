@@ -380,6 +380,7 @@
 	}
 .leaflet-control-layers label {
 	display: block;
+	padding-top: 4px;
 	}
 .leaflet-control-layers-separator {
 	height: 0;
@@ -633,5 +634,31 @@
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+
+
+
+
+input {
+	opacity: 0;
+	z-index: -1;
+}
+
+
+input + span {
+	background: url(./images/hide.png) no-repeat;
+	margin-left: -15px;
+	padding-left: 35px;
+	padding-top: 11px
+}
+
+
+input:checked + span {
+	background: url(./images/eye.png) no-repeat;
+	margin-left: -15px;
+	padding-left: 35px;
+	padding-top: 11px;
+}
+
 
 
