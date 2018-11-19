@@ -373,7 +373,7 @@
     background-position-y: 85%;
 	}
 .leaflet-control-layers-scrollbar {
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	padding-right: 5px;
 	}
