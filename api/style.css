@@ -14,3 +14,9 @@
     z-index: 999;
 }
 
+#result_table {
+	display: grid;
+	margin-top: 40px;
+    margin-left: 40px;
+}
+
