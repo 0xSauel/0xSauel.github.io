@@ -803,7 +803,7 @@ input:checked+span {
     width: 200px;
     max-width: 480px;
     background: url(/scripts/leaflet/images/bg.png);
-    color: #fff;
+    color: #000;
     opacity: 0.95;
     /* border: 1px solid #0066ff; */
     position: absolute;
