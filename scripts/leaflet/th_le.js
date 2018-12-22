@@ -163,7 +163,7 @@ referenceflag.on("dragend", function(e) {
 })
 
 
-
+// var custom_markers = []
 
 
 
@@ -176,6 +176,7 @@ $(function() {
         success: function(data) {
             $('#output').html("");
             var i = 0
+            
             for (i in data) {
                 var id = data[i][0];
                 var lat = data[i][1];
@@ -184,7 +185,7 @@ $(function() {
                 var desc = data[i][4];
 
                 for (var xi in id) {
-                    new L.marker([lat, lng], { icon: custom_marker }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(map);
+                   new L.marker([lat, lng], { icon: custom_marker }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(lg_9);
                 }
             }
         }
@@ -1363,6 +1364,7 @@ var lg_5 = L.layerGroup([tellari_swamp, kirkwall, inner_place, stormshore, du_li
 var lg_6 = L.layerGroup([west_legion, watchers_fleet, south_legion_fleet, north_lefion, east_legion, south_legion, donarks_base, central_legion]);
 var lg_7 = L.layerGroup([farelden_poly, orlais_poly, nevarra_poly, anderfels_poly, tevinter_poly, free_marches_poly, antiva_poly, rivain_poly, donarks_poly, seheron_and_par_vollen_poly]).addTo(map);
 var lg_8 = L.layerGroup([grat]);
+var lg_9 = L.layerGroup().addTo(map);
 var overlays = {
     "Инквизиция и союзники": lg_1,
     "Силы Старшего": lg_2,
@@ -1371,7 +1373,8 @@ var overlays = {
     "Места сражений": lg_4,
     "Гнезда драконов": lg_5,
     "Границы стран": lg_7,
-    "Координатная сетка": lg_8
+    "Координатная сетка": lg_8,
+    "Метки игроков": lg_9
 };
 L.control.layers(null, overlays, {
     collapsed: false
