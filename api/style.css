@@ -1,0 +1,16 @@
+#pwd_modal {
+    display: block;
+    padding: 30px;
+    /* margin-top: 40px; */
+    /* margin-left: 70px; */
+    height: 100%;
+    width: 100%;
+    /* max-width: 480px; */
+    background: #fff;
+    color: #000;
+    opacity: 1;
+    /* border: 1px solid #0066ff; */
+    position: absolute;
+    z-index: 999;
+}
+

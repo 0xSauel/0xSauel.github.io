@@ -844,7 +844,7 @@ input:checked+span {
     background-position: 2% 90%;
     opacity: 0.9;
     transition: opacity 0.5s ease;
-    margin-left: 48px!important;
+    margin-left: 32px!important;
     margin-top: 11px!important;
 }
 

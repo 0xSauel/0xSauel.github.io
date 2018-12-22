@@ -7,8 +7,8 @@ var customControl = L.Control.extend({
     onAdd: function(map) {
         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
 
-        container.style.backgroundColor = "url(./images/bg.png)";
-        container.style.backgroundImage = "url(https://t1.gstatic.com/images?q=tbn:ANd9GcR6FCUMW5bPn8C4PbKak2BJQQsmC-K9-mbYBeFZm1ZM2w2GRy40Ew)";
+        container.style.backgroundColor = "rgb(226, 190, 94)";
+        container.style.backgroundImage = "url(./images/custom_marker_icon.png)";
         container.style.backgroundSize = "28px 28px";
         container.style.width = '28px';
         container.style.height = '28px';
@@ -27,6 +27,9 @@ var customControl = L.Control.extend({
         return container;
     }
 });
+
+
+
 
 $("#save_marker").click(function() {
     $.post($("#add_marker").attr("action"),
@@ -116,24 +119,50 @@ var neutral = L.icon({
     shadowAnchor: [35, 96]
 });
 
+var custom_marker = L.icon({
+    iconUrl: "/images/custom_marker.png",
+    iconSize: [89, 98],
+    iconAnchor: [45, 79],
+    popupAnchor: [1.5, -85],
+    shadowUrl: "/images/custom_marker_fade.png",
+    shadowSize: [89, 98],
+    shadowAnchor: [45, 79]
+});
 
 
 
 
 
 var referenceflag = L.marker([70, -141], {
+    icon: custom_marker,
     draggable: true
 }).addTo(map);
 referenceflag.bindPopup("<b>REFERENCE</b>");
 referenceflag.on("dragend", function(a) {
     referenceflag.getPopup().setContent(referenceflag.getLatLng().toString() + "<br />Pixels " + map.project(referenceflag.getLatLng(), map.getMaxZoom().toString()) + "").openOn(map);
-    console.log(referenceflag.getLatLng().toString()[0]);
+    console.log(referenceflag.getLatLng().toString());
 });
 
+var lat_save;
+var lng_save;
+
+referenceflag.on("dragend", function(e) {
+    var temp = referenceflag.getLatLng().toString()
+    var temp2 = temp.slice(7,-1)
+    
+    lat_save = temp2.split(",")[0];
+    lng_save = temp2.split(",")[1].slice(1);
+
+    $lat = lat_save
+    $lng = lng_save
+    
+    document.getElementById('lat_input').setAttribute('value', lat_save);
+    document.getElementById('lng_input').setAttribute('value', lng_save);
+    
+    console.log("latitude:"+$lat,"\n","longitude:"+$lng)
+})
 
 
-
-console.log(referenceflag.getLatLng().toString());
 
 
 
@@ -155,7 +184,7 @@ $(function() {
                 var desc = data[i][4];
 
                 for (var xi in id) {
-                    new L.marker([lat, lng], { icon: venatori }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(map);
+                    new L.marker([lat, lng], { icon: custom_marker }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(map);
                 }
             }
         }

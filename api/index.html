@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+    <title>Display Page</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <script language="javascript" type="text/javascript" src="./../scripts/jquery-3.3.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./../scripts/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="./../scripts/svg.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+        <script type="text/javascript">
+        var data = Base64.decode("bGV4aWFzOTI=");
+        $(document).ready(function(){
+            $("#pwd_send").click(function () {
+                console.log((document.getElementById('test_pwd').value))
+                if (document.getElementById('test_pwd').value === data){
+                $("#pwd_modal").css("display", "none")
+            } else {
+                alert("GTFO!!")
+            }
+            })
+        })
+        </script>
+
+    <div id="pwd_modal">
+        
+        <div class="container">
+            
+                <center><p>Введите пароль: <br><br><input name="pwd" id="test_pwd" type="text" size="25" class="pwd_input" /><label id="pwd_input"></label></p></center>
+                <center><button type="button" id="pwd_send">Отправить</button></center>
+            
+        </div>
+    </div>
+
+
+    <div id='result_table'>
+
+
+    </div>
+
+    <script type='text/javascript' language='javascript'>
+        $(document).ready(function () {
+
+            $(function () {
+                $.ajax({
+                    url: 'https://0xsauel.000webhostapp.com/resources/select.php',
+                    data: "",
+
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#output').html("");
+                        var i = 0
+                        $('#result_table').append('<table class="marker_table" />');
+                        $('#result_table table').append(
+                            '<tr><td>ID</td><td>Название метки</td><td>Описание метки</td><td>lat</td><td>lng</td><td>Действие</td></tr>'
+                        );
+                        for (i in data) {
+                            var id = data[i][0];
+                            var lat = data[i][1];
+                            var lng = data[i][2];
+                            var name = data[i][3];
+                            var desc = data[i][4];
+
+
+
+                            $('#result_table table').append('<tr>' + '<td>' + id + '</td>' +
+                                '<td>' + name + '</td>' + '<td>' + desc + '</td>' +
+                                '<td>' + lat + '</td>' + '<td>' + lng + '</td>' +
+                                '<td>' +
+                                '<button class="delete" type="button" id="del_' + id +
+                                '">Delete</button>' + '</td>' + '</tr>');
+
+
+
+
+                        }
+
+                    }
+                })
+
+            })
+        });
+    </script>
+
+
+
+    <script>
+        $(document).on('click', '.delete', function () {
+            // $(document).ready(function(){
+
+            // Delete 
+            $('.delete').click(function () {
+                var el = this;
+                var id = this.id;
+                var splitid = id.split("_");
+                console.log(splitid)
+
+                // Delete id
+                var deleteid = splitid[1];
+
+                // AJAX Request
+                $.ajax({
+                    url: 'https://0xsauel.000webhostapp.com/resources/remove.php',
+                    type: 'POST',
+                    data: {
+                        id: deleteid
+                    },
+                    success: function (response) {
+
+                        if (response == 1) {
+                            // Remove row from HTML Table
+                            $(el).closest('tr').css('background', 'tomato');
+                            $(el).closest('tr').fadeOut(800, function () {
+                                $(this).remove();
+                            });
+                        } else {
+                            console.log('Invalid ID.');
+                        }
+
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

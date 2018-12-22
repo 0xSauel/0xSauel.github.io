@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html style="height: 100%; margin: 0;">
+
 <head>
 	<title>Thedas map</title>
 	<meta charset="utf-8">
@@ -12,46 +13,46 @@
 	<script type="text/javascript" src="./scripts/leaflet/Leaflet.Graticule.js"></script>
 	<link rel="stylesheet" type="text/css" href="./scripts/svg.css">
 	<link rel="stylesheet" href="./scripts/leaflet/Control.FullScreen.css" />
- 	<script src="./scripts/leaflet/Control.FullScreen.js"></script>
- 	<!-- /// -->
+	<script src="./scripts/leaflet/Control.FullScreen.js"></script>
+	<!-- /// -->
 
 </head>
+
 <body style="height: 100%; margin: 0;">
 
+	<div id="modal">
+		<div id="close_modal">X</div>
+		<div class="container">
+			<form name="add_marker" action="https://0xsauel.000webhostapp.com/resources/insert.php" method="post">
 
+				<p>Название<input name="name" type="text" size="25" class="savemarkerinput" /><label id="markerName_label"></label></p>
 
-<div id="modal" >
-	<div id="close_modal">X</div>
-	<div class="container">
-	<form name = "add_marker" action = "https://0xsauel.000webhostapp.com/resources/insert.php" method = "post">
-		
-		<p>Name<input name = "name" type="text" size="25" class="savemarkerinput"/><label id ="markerName_label"></label></p>
+				<p>Описание<input name="description" type="text" size="25" class="savemarkerinput" /><label id="markerDesc_label"></label></p>
 
-		<p>Description<input name = "description" type="text" size="25" class="savemarkerinput"/><label id ="markerDesc_label"></label></p>
-
-		<p><input type="hidden" name="id" value = "null" /></p>
-		<p><input type="hidden" name="lat" value = "$lat" /></p>
-		<p><input type="hidden" name="lng" value = "$lng" /></p>
-		<button id="save_marker">Save Marker</button>
-	</form>
+				<p><input type="hidden" name="id" value="null" /></p>
+				<p><input type="hidden" id=lat_input name="lat" value="" /></p>
+				<p><input type="hidden" id=lng_input name="lng" value="" /></p>
+				<button id="save_marker">Сохранить метку</button>
+			</form>
+		</div>
 	</div>
-</div>
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#sb").click(function() {
-        $("#modal").css("display", "block");
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#sb").click(function () {
+				$("#modal").css("display", "block");
 
-    });
-});
-</script>
+			});
+		});
+	</script>
 
 
-<div id="map" style="width: 100%; height: 100%; background: #000000; margin: 0;" ></div> <!--  -->
-<script type="text/javascript" src="./scripts/leaflet/th_le.js"></script>
+	<div id="map" style="width: 100%; height: 100%; background: #000000; margin: 0;"></div> <!--  -->
+	<script type="text/javascript" src="./scripts/leaflet/th_le.js"></script>
 
 
 
 
 
 </body>
+
 </html>
