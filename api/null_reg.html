@@ -43,6 +43,46 @@
 
     </script>
 
+  <div id='result_table'>
+
+
+    </div>
+
+    <script type='text/javascript' language='javascript'>
+        $("#pwd_send").click(function () {
+                if (document.getElementById('test_pwd').value === data){
+            $(function () {
+                $.ajax({
+                    url: 'https://0xsauel.000webhostapp.com/resources/select.php',
+                    data: "",
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#output').html("");
+                        var i = 0
+                        $('#result_table').append('<table class="marker_table" />');
+                        $('#result_table table').append(
+                            '<tr><td>ID</td><td>Название метки</td><td>Описание метки</td><td>lat</td><td>lng</td><td>Действие</td></tr>'
+                        );
+                        for (i in data) {
+                            var id = data[i][0];
+                            var lat = data[i][1];
+                            var lng = data[i][2];
+                            var name = data[i][3];
+                            var desc = data[i][4];
+                            $('#result_table table').append('<tr>' + '<td>' + id + '</td>' +
+                                '<td>' + name + '</td>' + '<td>' + desc + '</td>' +
+                                '<td>' + lat + '</td>' + '<td>' + lng + '</td>' +
+                                '<td>' +
+                                '<button class="delete" type="button" id="del_' + id +
+                                '">Delete</button>' + '</td>' + '</tr>');
+                        }
+                    }
+                })
+            })
+        }
+        });
+    </script>
+			
 </body>
 
 </html>
