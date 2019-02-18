@@ -61,20 +61,14 @@
                         var i = 0
                         $('#result_table').append('<table class="marker_table" />');
                         $('#result_table table').append(
-                            '<tr><td>ID</td><td>Название метки</td><td>Описание метки</td><td>lat</td><td>lng</td><td>Действие</td></tr>'
+                            '<tr><td>ID</td><td>Forum Name</td><td>Discord Name</td></tr>'
                         );
                         for (i in data) {
                             var id = data[i][0];
-                            var lat = data[i][1];
-                            var lng = data[i][2];
-                            var name = data[i][3];
-                            var desc = data[i][4];
+                            var fname = data[i][1];
+                            var dname = data[i][2];
                             $('#result_table table').append('<tr>' + '<td>' + id + '</td>' +
-                                '<td>' + name + '</td>' + '<td>' + desc + '</td>' +
-                                '<td>' + lat + '</td>' + '<td>' + lng + '</td>' +
-                                '<td>' +
-                                '<button class="delete" type="button" id="del_' + id +
-                                '">Delete</button>' + '</td>' + '</tr>');
+                                '<td>' + fname + '</td>' + '<td>' + dname + '</td>' + '</tr>');
                         }
                     }
                 })
