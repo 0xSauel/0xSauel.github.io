@@ -50,8 +50,7 @@
     </div>
 
     <script type='text/javascript' language='javascript'>
-        $("#pwd_send").click(function () {
-                if (document.getElementById('test_pwd').value === data){
+        $( document ).ready(function() {
             $(function () {
                 $.ajax({
                     url: 'https://0xsauel.000webhostapp.com/resources/select.php',
@@ -80,7 +79,7 @@
                     }
                 })
             })
-        }
+        
         });
     </script>
 			
