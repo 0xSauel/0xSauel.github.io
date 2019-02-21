@@ -51,9 +51,9 @@ function clearInput() {
 }
 
 
-
-var mapSW = [0, 8192],
-    mapNE = [8192, 0];
+// 8192
+var mapNE = [700, 6750],
+    mapSW = [7500, 1500];
 var map = L.map("map").setView([0, 0], 4);
 L.tileLayer("map/{z}/{x}/{y}.png", {
     minZoom: 3,
@@ -148,18 +148,18 @@ var lng_save;
 
 referenceflag.on("dragend", function(e) {
     var temp = referenceflag.getLatLng().toString()
-    var temp2 = temp.slice(7,-1)
-    
+    var temp2 = temp.slice(7, -1)
+
     lat_save = temp2.split(",")[0];
     lng_save = temp2.split(",")[1].slice(1);
 
     $lat = lat_save
     $lng = lng_save
-    
+
     document.getElementById('lat_input').setAttribute('value', lat_save);
     document.getElementById('lng_input').setAttribute('value', lng_save);
-    
-    console.log("latitude:"+$lat,"\n","longitude:"+$lng)
+
+    console.log("latitude:" + $lat, "\n", "longitude:" + $lng)
 })
 
 
@@ -176,7 +176,7 @@ $(function() {
         success: function(data) {
             $('#output').html("");
             var i = 0
-            
+
             for (i in data) {
                 var id = data[i][0];
                 var lat = data[i][1];
@@ -185,7 +185,7 @@ $(function() {
                 var desc = data[i][4];
 
                 for (var xi in id) {
-                   new L.marker([lat, lng], { icon: custom_marker }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(lg_9);
+                    new L.marker([lat, lng], { icon: custom_marker }).bindPopup("<center><b>" + name + "</b></center><hr>" + desc).addTo(lg_9);
                 }
             }
         }
@@ -1334,28 +1334,51 @@ var seheron_and_par_vollen = [
 var seheron_and_par_vollen_poly = L.polygon(seheron_and_par_vollen, {
     className: "seheron_and_par_vollen_reg"
 }).bindPopup('<center><h2><b>Сегерон и Пар Воллен</b></h2><hr><img src="images/Qunari_House_of_Tides_heraldry.png" width="100" height="100"><br><b>Столица: </b> Кунандар<br><b>Форма правления: </b> триумвират<br><b>Правители: </b> Аришок, Аригена, Арикун<br><b>Население: </b> ~ 3 250 000 душ<br><b>Государственный язык: </b> кунлат<br><b>Государственная религия: </b> Кун<br><b>Политико-экономическая ситуация: </b> сохраняют нейтралитет и наблюдают за ситуацией на континенте, готовясь нанести удар по победителю для последующего завоевания.</center>').addTo(map);
-var grat = L.latlngGraticule({
-    showLabel: true,
-    color: "#000",
-    fontColor: "#fff",
-    zoomInterval: [{
-        start: 2,
-        end: 3,
-        interval: 7
-    }, {
-        start: 4,
-        end: 4,
-        interval: 7
-    }, {
-        start: 5,
-        end: 7,
-        interval: 7
-    }, {
-        start: 8,
-        end: 10,
-        interval: 7
-    }]
+
+
+// 
+// 
+// GRID
+// Changes
+// var mapNE = [700, 6750],
+//     mapSW = [7500, 1500];
+// + import
+var rects = {};
+
+function coordsToKey(coords) {
+    return coords.x + ':' + coords.y + ':' + coords.z;
+}
+
+// var screenwidth = 1366;
+// make a new VirtualGrid
+var grid = new VirtualGrid({
+    cellSize: 6000 / 64
 });
+
+// when new cells come into view...
+grid.on('cellcreate', function(e) {
+    rects[coordsToKey(e.coords)] = L.rectangle(e.bounds, {
+        color: '#000',
+        weight: 1.5,
+        opacity: 0.8,
+        fillOpacity: 0
+    }).addTo(map);
+});
+
+grid.on('cellenter', function(e) {
+    var rect = rects[coordsToKey(e.coords)];
+    map.addLayer(rect);
+});
+
+grid.on('cellleave', function(e) {
+    var rect = rects[coordsToKey(e.coords)];
+    map.removeLayer(rect);
+});
+
+// grid.addTo(map);
+
+
+
 var lg_1 = L.layerGroup([skyhold, gessarian_camp, du_cordo, revasan, bronak]);
 var lg_2 = L.layerGroup([suledin, adamant, amarantain, korifei_camp, dumat, terinfall, kaer_oswin, griphon_wing, soldier_height]);
 var lg_3 = L.layerGroup([mital, lost_dirtamena, grey_guardians, ostagar, eonar, velanis, velabanchel, akhaaz, elim]);
@@ -1363,7 +1386,7 @@ var lg_4 = L.layerGroup([amarantain_battle, west_holm, korifei_tewinter]);
 var lg_5 = L.layerGroup([tellari_swamp, kirkwall, inner_place, stormshore, du_lion, holyplains, emerald_graves, west_rich, hissing_wastes, crosswood, frostback_basin, hundred_pillars, perendeil, donark, high_reaches, white_peak]);
 var lg_6 = L.layerGroup([west_legion, watchers_fleet, south_legion_fleet, north_lefion, east_legion, south_legion, donarks_base, central_legion]);
 var lg_7 = L.layerGroup([farelden_poly, orlais_poly, nevarra_poly, anderfels_poly, tevinter_poly, free_marches_poly, antiva_poly, rivain_poly, donarks_poly, seheron_and_par_vollen_poly]).addTo(map);
-var lg_8 = L.layerGroup([grat]);
+var lg_8 = L.layerGroup([grid]);
 var lg_9 = L.layerGroup().addTo(map);
 var overlays = {
     "Инквизиция и союзники": lg_1,
